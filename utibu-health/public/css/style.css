@@ -1,0 +1,649 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+
+body{
+padding:0;
+font-family: 'Open Sans', sans-serif;	
+background: url('../images/body-bg.jpg') no-repeat;
+background-size:cover;
+-webkit-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+-moz-background-size: cover;
+    min-height: 799px;
+}
+body a{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+input[type="button"],input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;			   
+}	
+p{
+	margin:0;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+label{
+	margin:0;
+}
+/*-- main --*/
+.main {
+	padding:80px 0;
+    width: 60%;
+    margin: 0 auto 0 auto;
+}
+.main h1{
+	color:#fff;
+	font-size:45px;
+	font-family: 'Droid Serif', serif;
+	text-align:center;
+	margin-bottom:35px;
+}
+.hotel-left{
+	float:left;
+	width:50%;
+}
+.hotel-right{
+    background: #f2f2f2;
+    float:left;
+    width: 37.75%;
+    padding: 55px;
+	position:relative;
+}
+.hotel-left img{
+	width:100%;
+}
+.hotel-right ul.list_ins1 {
+	float:left;
+}
+.hotel-right ul.list_ins2 {
+	float:right;
+}
+.hotel-right ul li{
+	list-style-type:none;
+	line-height:2em;
+	color:#A9A7A7;
+	font-size:14px;
+	font-weight:600;
+}
+.hotel-right h3{
+	font-family: 'Droid Serif', serif;
+	font-size:26px;
+	color:#F76721;
+	margin-bottom:15px;
+}
+.hotel-right ul li:nth-child(6) {
+    font-size: 25px;
+    color: #000;
+}
+.hotel-form{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+	}
+.pay-form h5 {
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+select {
+    color: #606060 !important;
+    font-size: 15px;
+    padding: 8px 0 8px 10px;
+    outline: none;
+border: 1px solid #e6e6e6;
+    background: url(../images/arrow.png) no-repeat 91% center #ffffff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-appearance: none;
+    float: left;
+    width: 38%;
+	margin-bottom: 20px;
+}
+select option{
+	border: 1px solid #DFDFDF;
+	outline: none;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.pay-form form input[type="text"] {
+    width: 94%;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #e6e6e6;
+    outline: none;
+    color:#000000;
+    border-radius: 5px;
+    margin-bottom: unset;
+}
+.pay-form form input.card_logo[type="text"] {
+    background: url(../images/card.jpg) no-repeat 99% center #fff;
+    background-size: 13% !important;
+}
+.pay-form {
+    padding-top: 25px;
+}
+input.text_box {
+	    border-radius: 5px;
+    background: #fcfcfc;
+border: 1px solid #e6e6e6;
+}
+.text_box {
+    margin-bottom: 20px;
+    display: inline;
+    padding: 3px 5px;
+    outline: none;
+    margin-left: 1%;
+    font-size: 20px;
+    color: #444;
+    width: 92%;
+    color: #606060;
+    font-size: 15px;
+    padding: 8px 0 8px 10px;
+    border: none;
+    outline: none;
+    background: #fff;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.pay-form ul {
+    float: right;
+    width: 52%;
+}
+.pay-form form input[type="submit"] {
+    background: url(../images/lock.png) no-repeat 27% center #F76721;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 17px 0;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+	cursor:pointer;
+}
+.pay-form form input[type="submit"]:hover{
+    background: url(../images/lock.png) no-repeat 27% center #000;
+}
+.pay-form p {
+    color: #000 !important;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 15px !important;
+}
+.pay-form p span{
+	 background: url(../images/lock1.png) no-repeat 0px 0px;
+	 width:16px;
+	 height:16px;
+	 display:inline-block;
+	 margin-right:5px;
+}
+p.footer {
+	font-size:14px;
+	color:#fff;
+	text-align:center;
+	margin-top:60px;
+}
+p.footer a{
+	color:#fff;
+}
+.hotel-left{
+	background: url('../images/body-bg1.jpg') no-repeat;
+background-size:cover;
+-webkit-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+-moz-background-size: cover;
+    min-height: 849px;
+	position:relative;
+	
+}
+.hotel-left h2 {
+    font-size: 25px;
+    color: #fff;
+    font-family: 'Droid Serif', serif;
+}
+.hotel-left h3 {
+    font-size: 32px;
+    color: #ECBA6E;
+    margin: 10px 0 0 0;
+}
+.hotel-left p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 7px;
+}
+.hotel-text{
+	position:absolute;
+    bottom: 75px;
+    left: 55px;
+}
+/*--style for close--*/
+.alert-close,.alert-close1,.alert-close2,.alert-close4,.alert-close6{
+	background: url('../images/into.png') no-repeat 0px 0px;
+	cursor: pointer;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+    right: 7px;
+    top: 11px;
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+	  z-index: 1;
+}
+/*--//style for close--*/
+/*-- responsive media queries --*/
+@media (max-width: 1440px){
+	.pay-form form input[type="submit"]:hover {
+		background: url(../images/lock.png) no-repeat 20% center #000;
+	}
+	.pay-form form input[type="submit"] {
+		background: url(../images/lock.png) no-repeat 20% center #F76721;
+	}
+	.hotel-right {
+		width: 36.75%;
+	}
+	.pay-form form input[type="text"] {
+		width: 93%;
+	}
+}
+@media (max-width: 1366px){
+	.hotel-right {
+		width: 35.75%;
+	}
+	.pay-form form input.card_logo[type="text"] {
+		background-size: 13% !important;
+	}
+	.pay-form form input[type="text"] {
+		width: 92%;
+	}
+	.text_box {
+		width: 91%;
+	}
+	.hotel-text {
+		position: absolute;
+		bottom: 75px;
+		left: 33px;
+	}
+}
+@media (max-width: 1280px){
+	.hotel-left {
+		float: left;
+		width: 49.5%;
+	}
+	.hotel-text {
+		position: absolute;
+		bottom: 75px;
+		left: 20px;
+	}
+	.hotel-left {
+		min-height: 897px;
+	}
+	.main {
+		padding: 80px 0;
+		width: 69%;
+	}
+	.hotel-left {
+		min-height: 849px;
+	}
+	.hotel-text {
+		left: 28px;
+	}
+	.pay-form form input[type="text"] {
+		width: 93%;
+	}
+}
+@media (max-width: 1080px){
+	.hotel-left {
+		float: left;
+		width: 52.4%;
+	}
+	.hotel-right {
+		background: #f2f2f2;
+		float: left;
+		width: 37.75%;
+		padding: 35px;
+	}
+	.hotel-left {
+		min-height: 817px;
+	}
+	.hotel-right h3 {
+		font-size: 22px;
+	}
+	.pay-form form input.card_logo[type="text"] {
+		background-size: 17% !important;
+	}
+	.main h1 {
+		font-size: 36px;
+	}	
+}
+@media (max-width: 1024px){
+	.pay-form form input[type="submit"] {
+		background: url(../images/lock.png) no-repeat 16% center #F76721;
+	}
+	.pay-form form input[type="submit"]:hover {
+		background: url(../images/lock.png) no-repeat 16% center #000;
+	}
+	.pay-form form input[type="text"] {
+		width: 92%;
+	}
+	.main {
+		width: 71%;
+	}
+}
+@media (max-width: 991px){
+	.main {
+		width: 75%;
+	}	
+}
+@media (max-width: 800px){
+	.main h1 {
+    font-size: 32px;
+	}
+	.hotel-left h2 {
+    font-size: 22px;
+	}
+	.hotel-left h3 {
+		font-size: 28px;
+	}
+	.hotel-left p {
+    font-size: 13px;
+	}
+}
+@media (max-width: 768px){
+	.main {
+		width: 85%;
+	}
+	.hotel-left {
+		float: left;
+		width: 51.1%;
+	}
+	.hotel-right {
+		width: 40.75%;
+		padding: 25px;
+	}
+	.hotel-left {
+		min-height: 786px;
+	}
+	.pay-form form input[type="submit"] {
+		font-size: 15px;
+	}
+	.hotel-right h3 {
+		font-size: 21px;
+	}
+	.hotel-right ul li:nth-child(5) {
+		font-size: 20px;
+	}
+}
+@media (max-width: 736px){
+	.main {
+		width: 87%;
+	}
+	.main h1 {
+		font-size: 28px;
+	}	
+}
+@media (max-width: 667px){
+	.main {
+		width: 92%;
+	}
+	.hotel-left {
+		float: left;
+		width: 50.6%;
+	}	
+	.hotel-text {
+		left: 15px;
+	}
+}
+@media (max-width: 640px){
+	.pay-form form input[type="submit"] {
+		font-size: 14px;
+	}
+	.pay-form form input[type="text"] {
+		width: 91%;
+	}
+	.text_box {
+		width: 89%;
+	}
+	.hotel-left {
+		float: left;
+		width: 50.4%;
+	}	
+	.hotel-text {
+		left: 17px;
+	}
+	.hotel-left {
+		min-height: 785px;
+	}
+}
+@media (max-width: 600px){
+	.main {
+		width: 94%;
+	}
+	select {
+		width: 43%;
+	}
+	.hotel-right h3 {
+		font-size: 20px;
+	}
+	.hotel-right ul li:nth-child(5) {
+		font-size: 17px;
+	}
+	.hotel-left {
+		float: left;
+		width: 50%;
+	}
+	.hotel-left {
+		min-height: 775px;
+	}
+	.main {
+		padding: 55px 0;
+	}
+.hotel-left h3 {
+    font-size: 24px;
+}
+.hotel-left h2 {
+    font-size: 19px;
+}	
+}
+@media (max-width: 568px){
+	.pay-form form input[type="submit"] {
+		font-size: 13px;
+	}
+	.pay-form form input[type="submit"] {
+		background: url(../images/lock.png) no-repeat 14% 42% #F76721;
+	}
+	.pay-form form input[type="submit"]:hover {
+		background: url(../images/lock.png) no-repeat 14% 42% #000;
+	}
+	.pay-form form input[type="text"] {
+		width: 90%;
+	}	
+	.hotel-left {
+		float: left;
+		width: 49.5%;
+	}
+	.hotel-left {
+		min-height: 776px;
+	}
+}
+@media (max-width: 480px){
+	.hotel-left {
+		min-height: 262px;
+	}
+	.hotel-text {
+		left: 25px;
+	}
+	p.footer {
+		margin-top: 44px;
+		line-height: 1.8em;
+	}
+	.hotel-left {
+		float: left;
+		width: 100%;
+	}
+	.hotel-right {
+		width: 88%;
+	}
+	.pay-form form input.card_logo[type="text"] {
+		background-size: 13% !important;
+	}
+	.text_box {
+		width: 93%;
+	}
+	.pay-form form input[type="text"] {
+		width: 94%;
+	}
+	.main h1 {
+		font-size: 25px;
+	}
+	.pay-form form input[type="submit"] {
+		background: url(../images/lock.png) no-repeat 30% 42% #F76721;
+	}
+	.pay-form form input[type="submit"]:hover {
+		background: url(../images/lock.png) no-repeat 30% 42% #000;
+	}
+}
+@media (max-width: 414px){
+	.hotel-right {
+    padding: 22px;
+	}
+	.pay-form form input[type="submit"] {
+		background: url(../images/lock.png) no-repeat 28% 42% #F76721;
+	}
+	.pay-form form input[type="submit"]:hover {
+		background: url(../images/lock.png) no-repeat 28% 42% #000;
+	}
+	.hotel-text {
+		bottom: 19px;
+	}
+	.hotel-left {
+		min-height: 156px;
+	}
+	p.footer {
+		margin-top: 37px;
+	}
+	.pay-form form input[type="text"] {
+		width: 93%;
+	}
+	.text_box {
+    width: 92%;
+	}
+}
+@media (max-width: 384px){
+	.main {
+    width: 91%;
+	}
+	.hotel-right {
+		padding: 19px;
+	}
+	.pay-form form input.card_logo[type="text"] {
+		background-size: 16% !important;
+	}
+	.pay-form form input[type="submit"]:hover {
+		background: url(../images/lock.png) no-repeat 24% 42% #000;
+	}
+	.pay-form form input[type="submit"] {
+		background: url(../images/lock.png) no-repeat 24% 42% #F76721;
+	}
+	.hotel-left {
+		min-height: 175px;
+	}
+	.pay-form form input[type="text"] {
+		width: 92%;
+	}
+}
+
+@media (max-width: 320px){
+	.main h1 {
+		font-size: 21px;
+	}
+	.main {
+		padding: 45px 0;
+	}
+	.main h1 {
+		margin-bottom: 30px;
+	}
+	.hotel-right ul li {
+		font-size: 13px;
+	}
+	.hotel-right h3 {
+		font-size: 18px;
+	}
+	.pay-form h5 {
+		font-size: 13px;
+	}
+	select {
+		font-size: 13px;
+	}
+	.text_box {
+		font-size: 13px;
+	}
+	.pay-form form input[type="submit"]:hover {
+		background: url(../images/lock.png) no-repeat 19% 42% #000;
+	}
+	.pay-form form input[type="text"] {
+		width: 91%;
+	}
+	.text_box {
+		width: 90%;
+	}
+	.pay-form form input[type="submit"] {
+		background: url(../images/lock.png) no-repeat 19% 42% #F76721;
+	}
+	p.footer {
+    font-size: 13px;
+	}
+}

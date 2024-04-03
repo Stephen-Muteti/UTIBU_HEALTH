@@ -1,0 +1,7 @@
+The returned order details need contain payment details (just check whether order_id is
+present in the Payments table and whether the corresponding amount is equal to the order's total amount and 
+return that it has been paid for
+
+
+Add an edit endpoint for orders that are still st the pending status. We can only edit the Medication ID and the quantity by virtue of which all other details get altered
+
