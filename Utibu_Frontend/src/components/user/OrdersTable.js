@@ -98,7 +98,7 @@ const OrdersTable = () => {
           setSnackBarMessage('You are not logged in');
           return;
         }
-        const response = await axios.put(`http://localhost:5000/api/orders/user/${orderToCancel.id}/cancel`, {}, {
+        const response = await axios.put(`https://utibu-backend-5c25d99347b7.herokuapp.com/api/orders/user/${orderToCancel.id}/cancel`, {}, {
             headers: { Authorization: `Bearer ${authToken}` },
         });
 
@@ -137,7 +137,7 @@ const OrdersTable = () => {
         return;
       }
       const response = await axios.get(
-        `http://localhost:5000/api/orders/user?page=${currentPage}&limit=${reportsPerPage}`,
+        `https://utibu-backend-5c25d99347b7.herokuapp.com/api/orders/user?page=${currentPage}&limit=${reportsPerPage}`,
         {
           headers: { Authorization: `Bearer ${authToken}` },
         }
@@ -170,7 +170,7 @@ const OrdersTable = () => {
         return;
       }
       const response = await axios.get(
-        `http://localhost:5000/api/orders/user?page=${page}&limit=${reportsPerPage}&category=${selectedCategory}&searchstring=${searchString}&status=${selectedStatus}`,
+        `https://utibu-backend-5c25d99347b7.herokuapp.com/api/orders/user?page=${page}&limit=${reportsPerPage}&category=${selectedCategory}&searchstring=${searchString}&status=${selectedStatus}`,
         {
           headers: { Authorization: `Bearer ${authToken}` },
         }

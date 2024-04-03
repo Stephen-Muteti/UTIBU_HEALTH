@@ -19,15 +19,15 @@ def create_app():
     """Initialize Flask extensions with the app"""
     bcrypt.init_app(app)
     jwt.init_app(app)
-    CORS(app, origins='http://localhost:3000')
+    CORS(app, origins='https://utibu-health-ab6a42bdf61a.herokuapp.com/')
 
     """JWT configurations"""
     app.config['JWT_SECRET_KEY'] = 'Team_leader_254'
     expiration_time = timedelta(days=1)
     app.config["JWT_ACCESS_TOKEN_EXPIRES"] = expiration_time
-
+    
     """Configure database URI"""
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pjnfqvda:zjEcJeP7rcEtXXGRsLqq6WYAazUcbU4p@bubble.db.elephantsql.com/pjnfqvda'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dqvkstfu:pMzWV-EEBesznu8_y7spgAtGV8IstKWq@bubble.db.elephantsql.com/dqvkstfu'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     """Suppress SQLAlchemy deprecation warning"""

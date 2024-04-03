@@ -99,7 +99,7 @@ const Login = () => {
 	  const submitFormData = async (data) => {
 		  try {
         resetUI();
-		    const response = await axios.post('http://localhost:5000/api/login', formData);
+		    const response = await axios.post('https://utibu-backend-5c25d99347b7.herokuapp.com/api/login', formData);
 
 		    if (response.data.token) {
           setSnackBarMessage('Login Successful');

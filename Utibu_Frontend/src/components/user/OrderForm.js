@@ -73,7 +73,7 @@ const OrderForm = () => {
           return;
         }      
 		    const response = await axios.post(
-          'http://localhost:5000/api/orders',
+          'https://utibu-backend-5c25d99347b7.herokuapp.com/api/orders',
           formData,
           {
             headers: { Authorization: `Bearer ${authToken}` },

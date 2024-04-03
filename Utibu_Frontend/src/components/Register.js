@@ -112,7 +112,7 @@ const AddUser = () => {
 
   const submitFormData = async (data) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/register', formData
+      const response = await axios.post('https://utibu-backend-5c25d99347b7.herokuapp.com/api/register', formData
         );
 
       if (response.status === 200) {

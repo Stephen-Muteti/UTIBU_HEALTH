@@ -36,7 +36,7 @@ const MedicationEdit = () => {
       const authToken = localStorage.getItem("access_token");
 
       axios
-        .get(`http://localhost:5000/api/medications/${medicationId}`,
+        .get(`https://utibu-backend-5c25d99347b7.herokuapp.com/api/medications/${medicationId}`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -86,7 +86,7 @@ const MedicationEdit = () => {
     try {
       const authToken = localStorage.getItem("access_token");
       
-      const response = await axios.put(`http://localhost:5000/api/medications/${medicationId}`, medication,
+      const response = await axios.put(`https://utibu-backend-5c25d99347b7.herokuapp.com/api/medications/${medicationId}`, medication,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,

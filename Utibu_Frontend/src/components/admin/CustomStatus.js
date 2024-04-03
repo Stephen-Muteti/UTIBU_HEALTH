@@ -49,7 +49,7 @@ export default function PositionedMenu({ id, onStatusChange }) {
       const authToken = localStorage.getItem('access_token');
       setInProgress(true);
 
-      const response = await axios.put(`http://localhost:5000/api/orders/${orderId}`, {status:newStatus},
+      const response = await axios.put(`https://utibu-backend-5c25d99347b7.herokuapp.com/api/orders/${orderId}`, {status:newStatus},
         {
           headers: {
             Authorization: `Bearer ${authToken}`,

@@ -63,7 +63,7 @@ const MedicationsTable = () => {
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     const handleEditClick = (medicationId) => {
-      navigate(`edit-medication/${medicationId}`);
+      navigate(`/admin/edit-medication/${medicationId}`);
     };
 
 
@@ -74,7 +74,7 @@ const MedicationsTable = () => {
         setDataFetchError(false);
         const authToken = localStorage.getItem("access_token");        
         const response = await axios.get(
-          `http://localhost:5000/api/medications?searchstring=${searchString}&page=${currentPage}`,
+          `https://utibu-backend-5c25d99347b7.herokuapp.com/api/medications?searchstring=${searchString}&page=${currentPage}`,
           {
             headers: {Authorization: `Bearer ${authToken}`,},
           }
@@ -104,7 +104,7 @@ const MedicationsTable = () => {
         setDataFetchError(false);
         const authToken = localStorage.getItem("access_token");        
         const response = await axios.get(
-          `http://localhost:5000/api/medications?searchstring=${searchString}&page=${page}`,
+          `https://utibu-backend-5c25d99347b7.herokuapp.com/api/medications?searchstring=${searchString}&page=${page}`,
           {
             headers: {Authorization: `Bearer ${authToken}`,},
           }
@@ -188,7 +188,7 @@ const MedicationsTable = () => {
     const handleDelete = async (medicationToDelete) => {
       try {
         const authToken = localStorage.getItem("access_token");
-        const response = await axios.delete(`http://localhost:5000/api/medications/${medicationToDelete.id}`, {
+        const response = await axios.delete(`https://utibu-backend-5c25d99347b7.herokuapp.com/api/medications/${medicationToDelete.id}`, {
           headers: { Authorization: `Bearer ${authToken}` },
         });
 

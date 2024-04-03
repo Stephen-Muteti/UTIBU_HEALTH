@@ -65,7 +65,7 @@ const OrderForm = () => {
 		  try {
         const authToken = localStorage.getItem("access_token");       
 		    const response = await axios.post(
-          'http://localhost:5000/api/medications',
+          'https://utibu-backend-5c25d99347b7.herokuapp.com/api/medications',
           formData,
           {
             headers: { Authorization: `Bearer ${authToken}` },

@@ -47,7 +47,7 @@ const PaymentsTable = () => {
         setDataFetchError(false);
         const authToken = localStorage.getItem("access_token");        
         const response = await axios.get(
-          `http://localhost:5000/api/payments?searchstring=${searchString}&page=${currentPage}`,
+          `https://utibu-backend-5c25d99347b7.herokuapp.com/api/payments?searchstring=${searchString}&page=${currentPage}`,
           {
             headers: {Authorization: `Bearer ${authToken}`,},
           }
@@ -77,7 +77,7 @@ const PaymentsTable = () => {
         setDataFetchError(false);
         const authToken = localStorage.getItem("access_token");        
         const response = await axios.get(
-          `http://localhost:5000/api/payments?searchstring=${searchString}&page=${page}`,
+          `https://utibu-backend-5c25d99347b7.herokuapp.com/api/payments?searchstring=${searchString}&page=${page}`,
           {
             headers: {Authorization: `Bearer ${authToken}`,},
           }

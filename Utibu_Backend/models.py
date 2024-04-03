@@ -62,31 +62,31 @@ class Medication(db.Model):
         }
 
 
-    def convert_quantity_to_base_unit(self, quantity_value, quantity_unit):
+    def convert_quantity_to_base_unit(self, quantity_value, quantity_unit, comparison_unit):
         """
         Convert the provided quantity to the base unit of the medication.
         """
-        if quantity_unit == self.quantity_unit:
+        if quantity_unit == comparison_unit:
             return quantity_value
-        elif quantity_unit in ["g", "mg", "kg"] and self.quantity_unit in ["g", "mg", "kg"]:
+        elif quantity_unit in ["g", "mg", "kg"] and comparison_unit in ["g", "mg", "kg"]:
             """Convert between weight units (g, mg, kg)"""
-            if quantity_unit == "g" and self.quantity_unit == "mg":
+            if quantity_unit == "g" and comparison_unit == "mg":
                 return quantity_value * 1000
-            elif quantity_unit == "mg" and self.quantity_unit == "g":
+            elif quantity_unit == "mg" and comparison_unit == "g":
                 return quantity_value / 1000
-            elif quantity_unit == "kg" and self.quantity_unit == "g":
+            elif quantity_unit == "kg" and comparison_unit == "g":
                 return quantity_value * 1000
-            elif quantity_unit == "g" and self.quantity_unit == "kg":
+            elif quantity_unit == "g" and comparison_unit == "kg":
                 return quantity_value / 1000
-            elif quantity_unit == "mg" and self.quantity_unit == "kg":
+            elif quantity_unit == "mg" and comparison_unit == "kg":
                 return quantity_value / 1000000
-            elif quantity_unit == "kg" and self.quantity_unit == "mg":
+            elif quantity_unit == "kg" and comparison_unit == "mg":
                 return quantity_value * 1000000
-        elif quantity_unit in ["ml", "l"] and self.quantity_unit in ["ml", "l"]:
+        elif quantity_unit in ["ml", "l"] and comparison_unit in ["ml", "l"]:
             """Convert between volume units (ml, l)"""
-            if quantity_unit == "ml" and self.quantity_unit == "l":
+            if quantity_unit == "ml" and comparison_unit == "l":
                 return quantity_value / 1000
-            elif quantity_unit == "l" and self.quantity_unit == "ml":
+            elif quantity_unit == "l" and comparison_unit == "ml":
                 return quantity_value * 1000
         else:
             return None
@@ -96,7 +96,7 @@ class Medication(db.Model):
         Calculate the total price based on the provided quantity value and the medication's price.
         """
         """Convert quantity to the base unit of the medication"""
-        quantity_in_base_unit = self.convert_quantity_to_base_unit(quantity_value, quantity_unit)
+        quantity_in_base_unit = self.convert_quantity_to_base_unit(quantity_value, quantity_unit, self.price_unit)
         if quantity_in_base_unit is None:
             return None
 
@@ -120,8 +120,11 @@ class Order(db.Model):
 
     user = relationship('User', backref='user_orders', lazy=True)
     medication = relationship('Medication', backref='medication_orders', lazy='joined', overlaps="ordered_medication")
+    payments = relationship('Payment', backref='order', lazy='joined', uselist=True)
+
 
     def serialize(self):
+        payment_status = 'paid' if self.payments else 'not paid'
         return {
             'id': self.id,
             'user_id': self.user_id,
@@ -130,6 +133,7 @@ class Order(db.Model):
             'quantity': f"{self.quantity_value} {self.quantity_unit}",
             'total_price': self.total_price,
             'status': self.status,
+            'payment_status': payment_status,
             'created_at': self.created_at.strftime('%Y-%m-%d %H:%M:%S'),
             'updated_at': self.updated_at.strftime('%Y-%m-%d %H:%M:%S')
         }
@@ -145,7 +149,7 @@ class Payment(db.Model):
     payment_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     """Define relationship with the Order model"""
-    order = relationship('Order', backref='payments', lazy=True)
+    payments_order = relationship('Order', backref='payment_transactions', lazy=True)
 
     def serialize(self):
         return {

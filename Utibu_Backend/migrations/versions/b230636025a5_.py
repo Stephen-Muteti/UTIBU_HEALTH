@@ -1,8 +1,8 @@
-"""Initial migration
+"""empty message
 
-Revision ID: 9cc9deabe3b0
+Revision ID: b230636025a5
 Revises: 
-Create Date: 2024-03-31 16:45:25.565086
+Create Date: 2024-04-03 17:59:30.955213
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '9cc9deabe3b0'
+revision = 'b230636025a5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,8 +21,10 @@ def upgrade():
     op.create_table('medications',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=100), nullable=False),
-    sa.Column('quantity', sa.Integer(), nullable=False),
-    sa.Column('price', sa.Float(), nullable=False),
+    sa.Column('quantity_value', sa.Float(), nullable=False),
+    sa.Column('quantity_unit', sa.String(length=20), nullable=False),
+    sa.Column('price_value', sa.Float(), nullable=False),
+    sa.Column('price_unit', sa.String(length=20), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('users',
@@ -40,9 +42,12 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('medication_id', sa.Integer(), nullable=False),
-    sa.Column('quantity', sa.Integer(), nullable=False),
+    sa.Column('quantity_value', sa.Float(), nullable=False),
+    sa.Column('quantity_unit', sa.String(length=20), nullable=False),
     sa.Column('total_price', sa.Float(), nullable=False),
     sa.Column('status', sa.String(length=20), nullable=False),
+    sa.Column('created_at', sa.DateTime(), nullable=False),
+    sa.Column('updated_at', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['medication_id'], ['medications.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')

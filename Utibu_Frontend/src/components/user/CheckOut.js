@@ -67,7 +67,7 @@ function CheckOutForm() {
           setSnackBarSeverity('error');
           return;
         }
-	    const response = await axios.post('http://localhost:5000/api/payments', {
+	    const response = await axios.post('https://utibu-backend-5c25d99347b7.herokuapp.com/api/payments', {
 	        order_id: orderDetails.id,
 	        amount: orderDetails.total_price,
 	        phone: formData.phone

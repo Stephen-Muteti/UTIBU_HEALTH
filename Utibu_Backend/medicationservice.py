@@ -135,6 +135,8 @@ class MedicationService:
         match = re.match(COMBINED_INPUT_PATTERN, combined_input.strip())
         if match:
             value = float(match.group(1))
+            if value < 0:
+                return None, None
             unit = match.group(3)
             return value, unit
         else:
@@ -153,6 +155,8 @@ class MedicationService:
         match = re.match(COMBINED_PRICE_INPUT_PATTERN, combined_input.strip())
         if match:
             value = float(match.group(1))
+            if value < 0:
+                return None, None
             unit = match.group(3)
             return value, unit
         else:

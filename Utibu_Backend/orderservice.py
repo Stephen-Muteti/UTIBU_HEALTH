@@ -139,14 +139,48 @@ class OrderService:
                 return None, None
 
 
+
+            """Convert the provided quantity to the base unit of the medication"""
+            quantity_in_base_unit = medication.convert_quantity_to_base_unit(quantity_value, quantity_unit, medication.quantity_unit)
+            print(quantity_in_base_unit)
+            if quantity_in_base_unit is None:
+                return None, "Unsupported unit conversion"
+
+            """Check if the converted quantity is less than or equal to the available quantity"""
+            if medication.quantity_value >= quantity_in_base_unit:
+                """Sufficient quantity available, set order status as confirmed"""
+                order_status = 'confirmed'
+
+                """
+                Reduce the quantity in store by the order quantity
+                They are currently in the same units(that of the medication quantity unit)
+                So just subtract and store back
+                """
+                remainder_quantity = medication.quantity_value - quantity_in_base_unit
+                """Update the medication quantity in the database with the remainder"""
+                medication.quantity_value = remainder_quantity
+                db.session.commit()
+            
+            else:
+                """Insufficient quantity available, set order status as pending"""
+                order_status = 'pending'
+
+
             """Calculate total price based on the provided quantity and medication's price"""
             total_price = medication.calculate_total_price(quantity_value, quantity_unit)
             if total_price is None:
                 return None, "Unsupported unit conversion"
 
-
+            
             """Create the order"""
-            order = Order(user_id=user_id, medication_id=medication_id, quantity_value=quantity_value, quantity_unit=quantity_unit, total_price=total_price, status='pending')
+            order = Order(
+                user_id=user_id,
+                medication_id=medication_id, 
+                quantity_value=quantity_value, 
+                quantity_unit=quantity_unit, 
+                total_price=total_price, 
+                status=order_status
+                )
             db.session.add(order)
             db.session.commit()
             return order.id, None

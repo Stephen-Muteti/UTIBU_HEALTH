@@ -51,7 +51,7 @@ const MedicationsTable = () => {
       setDataFetchError(false);
       const authToken = localStorage.getItem("access_token");        
       const response = await axios.get(
-        `http://localhost:5000/api/medications`,
+        `https://utibu-backend-5c25d99347b7.herokuapp.com/api/medications`,
         {
           params: {
             searchstring: searchString,
@@ -84,7 +84,7 @@ const MedicationsTable = () => {
       setDataFetchError(false);
       const authToken = localStorage.getItem("access_token");        
       const response = await axios.get(
-        `http://localhost:5000/medication/medications`,
+        `https://utibu-backend-5c25d99347b7.herokuapp.com/medication/medications`,
         {
           params: {
             searchstring: searchString,

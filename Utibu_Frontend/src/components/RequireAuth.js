@@ -15,7 +15,7 @@ export const RequireAuth = ({ children, requiredRole }) => {
   const validateSession = async () => {
     const authToken = localStorage.getItem('access_token');
     try {
-      const response = await axios.get('http://localhost:5000/api/validate_token', {
+      const response = await axios.get('https://utibu-backend-5c25d99347b7.herokuapp.com/api/validate_token', {
         headers: { Authorization: `Bearer ${authToken}` },
       });
 
