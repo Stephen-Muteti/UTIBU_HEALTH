@@ -19,7 +19,7 @@ def create_app():
     """Initialize Flask extensions with the app"""
     bcrypt.init_app(app)
     jwt.init_app(app)
-    CORS(app, origins='https://utibu-health-ab6a42bdf61a.herokuapp.com/')
+    CORS(app, origins='https://utibu-frontend-56d24be6acf1.herokuapp.com')
 
     """JWT configurations"""
     app.config['JWT_SECRET_KEY'] = 'Team_leader_254'
