@@ -1,5 +1,17 @@
 # Utibu Health Application
 
+You can access the application through the following link
+Log in with the following admin details to access both the normal user and admin privileges
+
+email:admin@utibu.com
+
+password:Jocteve1@
+
+
+https://utibu-frontend-56d24be6acf1.herokuapp.com
+
+
+
 ## Overview
 Utibu Health Application is an hybrid mobile application designed to facilitate remote medication ordering for patients of Utibu Health facility. The application allows registered users to make orders for their medication and check their statement remotely.
 
