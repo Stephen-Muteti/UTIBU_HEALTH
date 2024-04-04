@@ -10,6 +10,9 @@ password:Jocteve1@
 
 https://utibu-frontend-56d24be6acf1.herokuapp.com
 
+To access the admin side of the application just add /admin to the path as below:
+
+https://utibu-frontend-56d24be6acf1.herokuapp.com/admin
 
 
 ## Overview
